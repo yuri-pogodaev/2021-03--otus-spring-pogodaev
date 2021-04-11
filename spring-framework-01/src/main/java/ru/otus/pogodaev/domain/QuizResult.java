@@ -6,7 +6,7 @@ import lombok.Data;
 public class QuizResult {
     private final int correctAnswersCount;
     private final int minimumPassRate;
-    private boolean isPassed;
+    private final boolean isPassed;
 
     public QuizResult(int correctAnswersCount, int minimumPassRate) {
         this.correctAnswersCount = correctAnswersCount;

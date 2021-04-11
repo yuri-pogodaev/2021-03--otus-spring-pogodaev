@@ -7,6 +7,6 @@ import lombok.Data;
 @Data
 @Builder
 public class Question {
-    private String question;
-    private String correctAnswer;
+    private final String question;
+    private final String correctAnswer;
 }
