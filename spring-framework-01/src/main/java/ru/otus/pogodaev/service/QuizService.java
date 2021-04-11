@@ -6,5 +6,5 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public interface QuizService {
-    QuizResult examine(Scanner scanner) throws IOException;
+    QuizResult start(Scanner scanner) throws IOException;
 }

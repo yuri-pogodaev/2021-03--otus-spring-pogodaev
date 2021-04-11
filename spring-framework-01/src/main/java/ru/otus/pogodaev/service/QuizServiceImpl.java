@@ -10,11 +10,11 @@ import java.util.List;
 import java.util.Scanner;
 
 @RequiredArgsConstructor
-public class QuizServiceImpl implements QuizService{
+public class QuizServiceImpl implements QuizService {
     private final QuestionDao questionDao;
     private final int minimumPassRate;
 
-    public QuizResult examine(Scanner scanner) throws IOException {
+    public QuizResult start(Scanner scanner) throws IOException {
         List<Question> questionList = questionDao.getQuestions();
         int correctAnswersCount = 0;
 
@@ -22,7 +22,7 @@ public class QuizServiceImpl implements QuizService{
             System.out.println("Question: " + question.getQuestion());
             System.out.print("Enter your answer: ");
             String answer = scanner.nextLine();
-            if(question.getCorrectAnswer().equalsIgnoreCase(answer)) {
+            if (question.getCorrectAnswer().equalsIgnoreCase(answer)) {
                 correctAnswersCount++;
             }
         }
