@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 import pogodaev.domain.Question;
 
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -23,10 +22,11 @@ public class QuestionDaoImpl implements QuestionDao {
     }
 
     public List<Question> getQuestions() throws IOException {
-        InputStream is = this.getClass().getResourceAsStream(path);
+
         List<Question> questionList = new ArrayList<>();
 
-        try (InputStreamReader reader = new InputStreamReader(is);
+        try (InputStream is = this.getClass().getResourceAsStream(path);
+             InputStreamReader reader = new InputStreamReader(is);
              CSVParser csvParser = new CSVParser(reader, CSVFormat.EXCEL.withDelimiter(';'))) {
             csvParser.getRecords().forEach(record -> questionList.add(Question.builder()
                     .question(record.get(0))

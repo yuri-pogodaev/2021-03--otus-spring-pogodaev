@@ -1,11 +1,15 @@
 package pogodaev.domain;
 
-import lombok.Builder;
 import lombok.Data;
 
 @Data
-@Builder
+
 public class Student {
     private String firstname;
     private String lastname;
+
+    public Student(String firstname, String lastname) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
 }

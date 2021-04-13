@@ -34,11 +34,7 @@ public class StartServiceImpl implements StartService {
         System.out.println(messageSource.getMessage("enter.lastname", null, Locale.getDefault()));
         String lastname = scanner.nextLine();
 
-        Student student = Student.builder()
-                .firstname(firstname)
-                .lastname(lastname)
-                .build();
-
+        Student student = new Student(firstname, lastname);
         QuizResult quizResult = quizService.start(scanner);
 
         String resultMessage;
