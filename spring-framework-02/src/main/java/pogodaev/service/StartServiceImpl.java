@@ -40,10 +40,10 @@ public class StartServiceImpl implements StartService {
         String resultMessage;
         if (quizResult.isPassed()) {
             resultMessage = messageSource.getMessage("congratulation",
-                    new Object[] { student.getFirstname(), quizResult.getCorrectAnswersCount() }, Locale.getDefault());
+                    new Object[] { student.getFirstname() + " " + student.getLastname(), quizResult.getCorrectAnswersCount() }, Locale.getDefault());
         } else {
             resultMessage = messageSource.getMessage("fail",
-                    new Object[] { student.getFirstname(), quizResult.getCorrectAnswersCount() }, Locale.getDefault());
+                    new Object[] { student.getFirstname() + " " + student.getLastname(), quizResult.getCorrectAnswersCount() }, Locale.getDefault());
         }
         System.out.println(resultMessage);
     }
