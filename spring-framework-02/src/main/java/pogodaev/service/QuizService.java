@@ -1,6 +1,8 @@
-package ru.otus.pogodaev.service;
+package pogodaev.service;
 
-import ru.otus.pogodaev.domain.QuizResult;
+
+
+import pogodaev.domain.QuizResult;
 
 import java.io.IOException;
 import java.util.Scanner;

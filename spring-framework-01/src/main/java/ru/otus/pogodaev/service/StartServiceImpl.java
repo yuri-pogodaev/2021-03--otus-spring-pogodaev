@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 @RequiredArgsConstructor
-public class StartServiceImpl implements StartService{
+public class StartServiceImpl implements StartService {
     private final QuizService quizService;
 
     public void startQuiz() throws IOException {
@@ -20,15 +20,15 @@ public class StartServiceImpl implements StartService{
 
         Student student = Student.builder().firstname(firstname).build();
 
-        QuizResult examResult = quizService.examine(scanner);
+        QuizResult quizResult = quizService.start(scanner);
 
         String resultMessage;
-        if(examResult.isPassed()) {
+        if (quizResult.isPassed()) {
             resultMessage = String.format("%s, congratulations! Test passed successfully! Number of correct answers: %d.",
-                    student.getFirstname(), examResult.getCorrectAnswersCount());
+                    student.getFirstname(), quizResult.getCorrectAnswersCount());
         } else {
             resultMessage = String.format("%s, unfortunately, the test is failed. Number of correct answers: %d.",
-                    student.getFirstname(), examResult.getCorrectAnswersCount());
+                    student.getFirstname(), quizResult.getCorrectAnswersCount());
         }
         System.out.println(resultMessage);
     }

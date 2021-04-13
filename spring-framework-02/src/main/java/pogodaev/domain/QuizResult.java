@@ -1,6 +1,8 @@
-package ru.otus.pogodaev.domain;
+package pogodaev.domain;
 
 import lombok.Data;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Data
 public class QuizResult {

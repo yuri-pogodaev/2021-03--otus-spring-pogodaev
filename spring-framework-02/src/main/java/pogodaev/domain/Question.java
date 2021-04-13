@@ -1,4 +1,4 @@
-package ru.otus.pogodaev.domain;
+package pogodaev.domain;
 
 
 import lombok.Builder;
